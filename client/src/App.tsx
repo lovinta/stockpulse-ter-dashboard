@@ -1947,6 +1947,25 @@ export default function App() {
       {/* ── Main content ── */}
       <main className="max-w-screen-2xl mx-auto px-6 py-8">
 
+        {/* RECOMMENDATION BANNER */}
+        <div className="mb-6 rounded-xl p-5 flex items-center justify-between" style={{ background: `linear-gradient(135deg, ${C.teal}22, ${C.surface})`, border: `1px solid ${C.teal}44` }}>
+          <div>
+            <div className="flex items-center gap-3 mb-1">
+              <span className="px-3 py-1 rounded-full text-sm font-bold" style={{ background: C.teal, color: C.bg }}>LONG</span>
+              <span className="text-xl font-bold" style={{ color: C.text }}>TER — Teradyne, Inc.</span>
+            </div>
+            <p className="text-sm" style={{ color: C.muted }}>"The Gatekeeper of Silicon and Steel" — AI chip testing + physical AI robotics</p>
+          </div>
+          <div className="text-right">
+            <div className="text-sm" style={{ color: C.muted }}>Price Targets</div>
+            <div className="flex gap-4 mt-1">
+              <span className="text-sm" style={{ color: C.red }}>Bear: $220</span>
+              <span className="text-sm font-bold" style={{ color: C.teal }}>Base: $380</span>
+              <span className="text-sm" style={{ color: C.green }}>Bull: $520</span>
+            </div>
+          </div>
+        </div>
+
         {/* Section 1: KPI Cards */}
         <Section title="Key Metrics" subtitle="As of latest close">
           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3">
@@ -2102,6 +2121,117 @@ export default function App() {
         {/* Section 5: Scenario Table */}
         <Section title="Scenario Analysis" subtitle="Bear / Base / Bull · 12-Month Targets">
           <ScenarioTable />
+        </Section>
+
+        {/* Section: DCF Valuation */}
+        <Section title="DCF / Valuation Framework" subtitle="Sum-of-the-Parts + Simplified DCF">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {/* SOTP */}
+            <div className="rounded-xl p-5" style={{ background: C.surface, border: `1px solid ${C.border}` }}>
+              <h3 className="text-sm font-semibold mb-3" style={{ color: C.teal }}>Sum-of-the-Parts (SOTP) Valuation</h3>
+              <table className="w-full text-xs">
+                <thead>
+                  <tr style={{ color: C.muted, borderBottom: `1px solid ${C.border}` }}>
+                    <th className="text-left py-2">Segment</th>
+                    <th className="text-right py-2">FY2025 Rev</th>
+                    <th className="text-right py-2">Methodology</th>
+                    <th className="text-right py-2">Implied Value</th>
+                  </tr>
+                </thead>
+                <tbody style={{ color: C.text }}>
+                  <tr style={{ borderBottom: `1px solid ${C.border}22` }}>
+                    <td className="py-2">Semiconductor Test</td>
+                    <td className="text-right">$2,520M</td>
+                    <td className="text-right">25x EV/EBITDA (peer avg)</td>
+                    <td className="text-right font-semibold" style={{ color: C.teal }}>$48.0B</td>
+                  </tr>
+                  <tr style={{ borderBottom: `1px solid ${C.border}22` }}>
+                    <td className="py-2">Product Test + IST</td>
+                    <td className="text-right">$357M</td>
+                    <td className="text-right">3.5x EV/Revenue</td>
+                    <td className="text-right font-semibold" style={{ color: C.teal }}>$1.2B</td>
+                  </tr>
+                  <tr style={{ borderBottom: `1px solid ${C.border}22` }}>
+                    <td className="py-2">Robotics (UR + MiR)</td>
+                    <td className="text-right">$308M</td>
+                    <td className="text-right">3x EV/Revenue (loss-making)</td>
+                    <td className="text-right font-semibold" style={{ color: C.amber }}>$0.9B</td>
+                  </tr>
+                  <tr style={{ borderBottom: `1px solid ${C.border}22` }}>
+                    <td className="py-2">Net Cash</td>
+                    <td className="text-right">—</td>
+                    <td className="text-right">Cash - Debt</td>
+                    <td className="text-right font-semibold" style={{ color: C.green }}>$0.3B</td>
+                  </tr>
+                  <tr className="font-bold">
+                    <td className="py-2" style={{ color: C.teal }}>Total Enterprise Value</td>
+                    <td></td>
+                    <td></td>
+                    <td className="text-right" style={{ color: C.teal }}>$50.5B</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1" style={{ color: C.muted }}>Current Market Cap</td>
+                    <td></td>
+                    <td></td>
+                    <td className="text-right" style={{ color: C.muted }}>$56.0B</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1" style={{ color: C.muted }}>Implied Premium / (Discount)</td>
+                    <td></td>
+                    <td></td>
+                    <td className="text-right font-semibold" style={{ color: C.amber }}>+10.9% premium</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="text-xs mt-3" style={{ color: C.muted }}>SOTP suggests slight overvaluation at current prices on FY2025 numbers. However, on FY2027E earnings ($10.81 consensus EPS), forward P/E compresses to 33x — reasonable for a company gaining share in a $12-14B TAM.</p>
+            </div>
+
+            {/* Simplified DCF */}
+            <div className="rounded-xl p-5" style={{ background: C.surface, border: `1px solid ${C.border}` }}>
+              <h3 className="text-sm font-semibold mb-3" style={{ color: C.teal }}>Simplified DCF (5-Year)</h3>
+              <table className="w-full text-xs">
+                <thead>
+                  <tr style={{ color: C.muted, borderBottom: `1px solid ${C.border}` }}>
+                    <th className="text-left py-2">Assumption</th>
+                    <th className="text-right py-2">Bear</th>
+                    <th className="text-right py-2">Base</th>
+                    <th className="text-right py-2">Bull</th>
+                  </tr>
+                </thead>
+                <tbody style={{ color: C.text }}>
+                  {[
+                    ["Revenue CAGR (5Y)", "12%", "18%", "25%"],
+                    ["Terminal Op Margin", "25%", "30%", "34%"],
+                    ["WACC", "11%", "10%", "9.5%"],
+                    ["Terminal Growth", "2.5%", "3.0%", "3.5%"],
+                    ["FY2030E Revenue", "$5.6B", "$7.3B", "$9.7B"],
+                    ["Terminal FCF", "$870M", "$1,460M", "$2,350M"],
+                  ].map(([label, bear, base, bull], i) => (
+                    <tr key={i} style={{ borderBottom: `1px solid ${C.border}22` }}>
+                      <td className="py-1.5">{label}</td>
+                      <td className="text-right" style={{ color: C.red }}>{bear}</td>
+                      <td className="text-right" style={{ color: C.teal }}>{base}</td>
+                      <td className="text-right" style={{ color: C.green }}>{bull}</td>
+                    </tr>
+                  ))}
+                  <tr className="font-bold" style={{ borderTop: `2px solid ${C.border}` }}>
+                    <td className="py-2">Implied Share Price</td>
+                    <td className="text-right" style={{ color: C.red }}>$220</td>
+                    <td className="text-right" style={{ color: C.teal }}>$380</td>
+                    <td className="text-right" style={{ color: C.green }}>$520</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1" style={{ color: C.muted }}>Upside / (Downside)</td>
+                    <td className="text-right" style={{ color: C.red }}>-39%</td>
+                    <td className="text-right" style={{ color: C.teal }}>+6%</td>
+                    <td className="text-right" style={{ color: C.green }}>+45%</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="text-xs mt-3" style={{ color: C.muted }}>Key driver: Semi Test revenue CAGR and terminal operating margin. Robotics breakeven (base/bull) adds $5-10B in enterprise value not captured in bear case. WACC reflects beta of 1.84 and current risk-free rate.</p>
+            </div>
+          </div>
+          <p className="text-xs mt-3" style={{ color: C.muted }}>Source: Our estimates. Revenue projections informed by management's target model ($6B at $12-14B ATE TAM) and consensus estimates (FY2026E: $4.18B, FY2027E: $5.03B). Peer multiples from Perplexity Finance.</p>
         </Section>
 
         {/* Section 8: Financial Tables */}
