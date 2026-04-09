@@ -2173,7 +2173,7 @@ export default function App() {
                 Perplexity Computer Features Used
               </h3>
               <p className="text-xs mt-1" style={{ color: C.muted }}>
-                17 integrated capabilities powered this analysis
+                22 integrated capabilities powered this analysis
               </p>
             </div>
           </div>
@@ -2195,6 +2195,10 @@ export default function App() {
               { label: "Website Building", icon: "\uD83C\uDF10" },
               { label: "PPTX Generation", icon: "\uD83D\uDCBB" },
               { label: "Video Editing", icon: "\uD83C\uDFA5" },
+              { label: "GitHub Deployment", icon: "\uD83D\uDCE6" },
+              { label: "Cron Monitoring", icon: "\u23F0" },
+              { label: "Ticker Sentiment", icon: "\uD83D\uDCCA" },
+              { label: "Custom Skill Creation", icon: "\uD83E\uDDE9" },
               { label: "Subagent Orchestration", icon: "\u2699\uFE0F" },
             ].map((f) => (
               <span
@@ -2217,7 +2221,7 @@ export default function App() {
         <footer className="mt-6 pb-8 flex items-center justify-between text-xs" style={{ color: C.muted }}>
           <div className="flex items-center gap-2">
             <StockPulseLogo size={16} />
-            <span>StockPulse · Powered by Kronos AI · 21 Perplexity Computer Capabilities</span>
+            <span>StockPulse · Powered by Kronos AI · 22 Perplexity Computer Capabilities</span>
           </div>
           <div className="flex items-center gap-4">
             <a href="/TER_Executive_Summary.pdf" target="_blank" className="underline" style={{color: C.teal}}>📄 Executive Summary</a>
