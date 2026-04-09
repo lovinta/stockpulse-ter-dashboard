@@ -1101,8 +1101,8 @@ function PeerComparison() {
       name: "Teradyne",
       price: TER_DATA.price,
       pe: TER_DATA.pe,
-      revenue_growth: 41.3,
-      gross_margin: 59.1,
+      revenue_growth: 13.1,
+      gross_margin: 58.3,
       market_cap: TER_DATA.marketCap,
       isTer: true,
     },
@@ -1211,7 +1211,7 @@ function PeerComparison() {
           P/E vs Revenue Growth
         </h3>
         <p className="text-xs mb-4" style={{ color: C.muted }}>
-          TER: high growth justifies premium multiple
+          TER: premium multiple reflects AI test exposure + robotics optionality
         </p>
         <ResponsiveContainer width="100%" height={220}>
           <ScatterChart margin={{ top: 10, right: 20, bottom: 20, left: 0 }}>
@@ -1930,6 +1930,17 @@ export default function App() {
             <Award size={11} />
             Stock Pitch Competition
           </div>
+          {/* GitHub link */}
+          <a
+            href="https://github.com/lovinta/stockpulse-ter-dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium"
+            style={{ background: "rgba(255,255,255,0.08)", color: C.muted }}
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            Source Code
+          </a>
         </div>
       </header>
 
@@ -1956,20 +1967,20 @@ export default function App() {
             <KpiCard
               title="P/E Ratio"
               value="103.0x"
-              sub="Above peer avg (36x)"
+              sub="Above peer avg (40x)"
               color={C.amber}
               badge="amber"
             />
             <KpiCard
               title="Revenue Growth"
-              value="+41.3%"
+              value="+13.1%"
               sub="FY2025 YoY"
               color={C.teal}
             />
             <KpiCard
               title="Free Cash Flow"
-              value="$902M"
-              sub="FY2025 (81% Conv.)"
+              value="$450M"
+              sub="FY2025 (14.1% margin)"
               color={C.teal}
             />
             <KpiCard
@@ -2138,7 +2149,7 @@ export default function App() {
             </div>
             <div>
               <p className="font-semibold mb-1" style={{ color: C.text }}>Competition Disclaimer</p>
-              <p>Prepared for Stock Pitch Competition judged by Philippe Laffont (Coatue), Dan Loeb (Third Point), and Ken Hao (Silver Lake). Not investment advice.</p>
+              <p>Prepared for Stock Pitch Competition judged by Philippe Laffont (Coatue), Dan Loeb (Third Point), Ken Hao (Silver Lake), and David Tepper (Appaloosa). Not investment advice.</p>
             </div>
             <div>
               <p className="font-semibold mb-1" style={{ color: C.text }}>Risk Disclosure</p>
@@ -2206,9 +2217,13 @@ export default function App() {
         <footer className="mt-6 pb-8 flex items-center justify-between text-xs" style={{ color: C.muted }}>
           <div className="flex items-center gap-2">
             <StockPulseLogo size={16} />
-            <span>StockPulse · Powered by Kronos AI</span>
+            <span>StockPulse · Powered by Kronos AI · 21 Perplexity Computer Capabilities</span>
           </div>
-          <span>TER · Teradyne, Inc. · NASDAQ · {new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+          <div className="flex items-center gap-4">
+            <a href="/TER_Executive_Summary.pdf" target="_blank" className="underline" style={{color: C.teal}}>📄 Executive Summary</a>
+            <a href="https://github.com/lovinta/stockpulse-ter-dashboard" target="_blank" className="underline" style={{color: C.muted}}>GitHub</a>
+            <span>TER · Teradyne, Inc. · NASDAQ · {new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+          </div>
         </footer>
       </main>
     </div>

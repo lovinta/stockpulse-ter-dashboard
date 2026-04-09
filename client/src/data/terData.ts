@@ -60,18 +60,18 @@ export const TER_DATA = {
       op_margin: 18.3,
     },
     fy2025: {
-      revenue: 3983,
-      gross_profit: 2352,
-      operating_income: 944,
-      net_income: 735,
-      eps: 4.74,
-      gross_margin: 59.1,
-      op_margin: 23.7,
+      revenue: 3190,
+      gross_profit: 1860,
+      operating_income: 702,
+      net_income: 547,
+      eps: 3.96,
+      gross_margin: 58.3,
+      op_margin: 22.0,
     },
   },
 
   cash_flow: {
-    fy2025: { operating: 1089, capex: -187, fcf: 902 },
+    fy2025: { operating: 674, capex: -224, fcf: 450 },
     fy2024: { operating: 635, capex: -138, fcf: 497 },
     fy2023: { operating: 520, capex: -124, fcf: 396 },
   },
@@ -168,8 +168,8 @@ export const TER_DATA = {
 
   analyst: {
     consensus: "Buy",
-    avg_target: 225.0,
-    high_target: 280.0,
+    avg_target: 272.0,
+    high_target: 332.0,
     low_target: 160.0,
     bullish_pct: 60,
     neutral_pct: 30,
